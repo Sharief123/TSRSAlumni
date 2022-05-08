@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Alumni",
+    "slug": "Alumni",
+    "version": "1.0.0",
+    "icon": "./assets/playstore.png",
+    "splash": {
+      "image": "./assets/Splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.alumni.student",
+      "versionCode": 11,
+      "config": {
+        "googleMaps": { 
+          "apiKey": "AIzaSyA69Xk8mgf-LWWW4-KvT82tvz4rIsJbMfU" 
+        }   
+     },
+     "permissions": ["INTERNET","SYSTEM_ALERT_WINDOW","VIBRATE","WRITE_EXTERNAL_STORAGE","READ_EXTERNAL_STORAGE","ACCESS_COARSE_LOCATION","ACCESS_FINE_LOCATION"]
+    },
+    "ios": {
+      "bundleIdentifier": "com.agriitex.alumni",
+      "buildNumber": "6.0.0",
+      "supportsTablet": true,
+      "infoPlist":{
+        "NSLocationAlwaysAndWhenInUseUsageDescription":"This app uses location services to capture user address",
+        "NSLocationAlwaysUsageDescription":"TThis app uses location services to capture user address",
+        "NSLocationWhenInUseUsageDescription":"This app uses location services to capture user address"
+      }
+    }
+  },
+  "name": "Alumni"
+}
