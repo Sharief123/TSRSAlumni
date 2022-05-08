@@ -8,8 +8,7 @@ import {
     ScrollView,
     ImageBackground,
     StyleSheet,
-    ToastAndroid,
-    Platform
+    ToastAndroid
 } from "react-native";
 import {
     TextInput,
@@ -94,10 +93,10 @@ const Insert_Event = (props) => {
     };
 
     const onChangeTime = (event, selectedDate) => {
-        const currentDate = selectedDate || cT;
+        const currentDate = selectedDate || time;
         setShowTime(Platform.OS === 'ios');
         setTime(currentDate);
-        console.log("Time:::>",cT);
+        console.log("Time:::>",time);
       };
 
     // const onChangeTime = () => {
@@ -689,9 +688,9 @@ const Insert_Event = (props) => {
                     borderWidth:1,
                     borderRadius:4
                 }}
-                onPress={()=>{
-                    showTimerpicker();
-                }}
+                // onPress={()=>{
+                //     showTimerpicker();
+                // }}
                 >
                     <View>
                     <Text
@@ -705,17 +704,16 @@ const Insert_Event = (props) => {
                             Event Time *
                         </Text>
                     
-                    {Platform.OS === "ios" ? 
-                    <View
+                    {/* <View
                         style={{
                             flexDirection:"row",
                             justifyContent:"space-between",
                             height:56,
                         }}
                     >
-                         {/* <TextInput
+                        {/* <TextInput
                             style={{
-                                width:"20%",
+                                width:"90%",
                                 backgroundColor:"#FFFF",
                                 marginTop:0
                             }}
@@ -724,12 +722,12 @@ const Insert_Event = (props) => {
                             placeholderTextColor="#000000DE"
                             underlineColorAndroid="transparent"
                             underlineColor="transparent"
-                            value={cT}
+                            value={time}
                             onChangeText={(text) => {
-                                setCT(text);
+                                 setTime(text);
                             }}
                             theme={{ roundness: 4,color:"green" }}
-                        />  */}
+                        /> 
                         <Text
                             style={{
                                 width:"80%",
@@ -737,7 +735,7 @@ const Insert_Event = (props) => {
                                 marginLeft:10
                             }}
                         >
-                            {cT.toLocaleTimeString()}
+                            {time.toTimeString()}
                         </Text>
                         <ImageBackground
                             style={{
@@ -759,8 +757,7 @@ const Insert_Event = (props) => {
                                 }}
                             />
                         </ImageBackground>
-                    </View> 
-                    :
+                    </View> */}
                     <DatePicker
                       style={{width: "100%", marginTop:5,borderColor:"#282A8B",height:46,borderWidth:0,marginLeft:5}}
                       date={cT === new Date() ? null : cT}
@@ -773,9 +770,20 @@ const Insert_Event = (props) => {
                       
                       confirmBtnText="Confirm"
                       cancelBtnText="Cancel"
+                      // customStyles={{
+                      //   dateIcon: {
+                      //     position: 'absolute',
+                      //     left: 0,
+                      //     top: 4,
+                      //     marginLeft: 0
+                      //   },
+                      //   dateInput: {
+                      //     marginLeft: 36
+                      //   }
+                      //   // ... You can check the source to find the other keys.
+                      // }}
                       onDateChange={(date) => {setCT(date)}}
                     />
-                            }
                     </View>
                 </TouchableRipple>
 
